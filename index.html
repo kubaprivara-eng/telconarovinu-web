@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="cs">
+<head>
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Přestaň přeplácet za telekomunikace — denní e-mailový program zdarma</title>
+<meta name="description" content="Každý den jeden praktický e-mail, díky kterému zjistíš, kde zbytečně platíš za telefon a internet, a uděláš si pořádek v telekomunikacích. Zdarma.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #050505;
+    --ink-2: #14110d;
+    --gold: #c6a27a;
+    --gold-strong: #b58e60;
+    --cream: #f3f0eb;
+    --cream-2: #e9e4da;
+    --muted: #a39c8f;
+    --ink-muted: #6b6459;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Poppins", system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: "Anton", "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+  .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .accent { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero { background: var(--ink); color: var(--cream); padding: 72px 0 84px; }
+  .eyebrow {
+    display: inline-block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(198,162,122,.4); border-radius: 999px;
+    padding: 7px 16px; font-weight: 500;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 7vw, 76px); margin: 26px 0 20px; max-width: 15ch;
+  }
+  .hero .sub {
+    font-size: clamp(16px, 2.1vw, 20px); color: #d8d2c6; max-width: 46ch; line-height: 1.65;
+  }
+  .hero-grid { display: grid; gap: 48px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 56px; } }
+
+  /* ── FORM CARD ── */
+  .card {
+    background: var(--cream); color: var(--ink); border-radius: 20px; padding: 32px 28px;
+    box-shadow: 0 30px 60px -30px rgba(0,0,0,.6);
+  }
+  .card h2 { font-size: 24px; margin-bottom: 6px; }
+  .card p.lead { font-size: 14px; color: var(--ink-muted); margin-bottom: 20px; text-transform: none; }
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+  .field input {
+    width: 100%; font: inherit; font-size: 16px; padding: 14px 16px; border-radius: 12px;
+    border: 1.5px solid var(--cream-2); background: #fff; color: var(--ink); outline: none;
+    transition: border-color .15s;
+  }
+  .field input:focus { border-color: var(--gold); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+    font-family: "Poppins", sans-serif; font-size: 17px; font-weight: 600; cursor: pointer;
+    background: var(--gold); color: var(--ink); border: none; border-radius: 12px; padding: 16px 22px;
+    transition: background .15s, transform .1s;
+  }
+  .btn:hover { background: var(--gold-strong); }
+  .btn:active { transform: scale(.99); }
+  .trust { font-size: 12.5px; color: var(--ink-muted); text-align: center; margin-top: 14px; text-transform: none; }
+
+  /* ── SECTIONS ── */
+  section.block { padding: 84px 0; }
+  .kicker { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-strong); font-weight: 600; }
+  .block h2 { font-size: clamp(30px, 4.5vw, 48px); margin: 12px 0 8px; max-width: 20ch; }
+
+  /* Co získáš */
+  .benefits { display: grid; gap: 18px; margin-top: 40px; }
+  @media (min-width: 720px) { .benefits { grid-template-columns: 1fr 1fr; gap: 20px 40px; } }
+  .benefit { display: flex; gap: 16px; align-items: flex-start; }
+  .benefit .mark {
+    flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: var(--gold);
+    display: flex; align-items: center; justify-content: center; font-size: 17px; margin-top: 2px;
+  }
+  .benefit p { font-size: 17px; }
+
+  /* Jak to funguje */
+  .how { background: var(--ink); color: var(--cream); }
+  .how .kicker { color: var(--gold); }
+  .steps { display: grid; gap: 40px; margin-top: 48px; }
+  @media (min-width: 800px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 32px; } }
+  .step .num { font-family: "Anton", sans-serif; font-size: 64px; color: var(--gold); line-height: 1; }
+  .step h3 { font-size: 22px; margin: 14px 0 10px; }
+  .step p { color: #cfc9bd; font-size: 16px; text-transform: none; }
+
+  /* Final CTA */
+  .final { background: var(--gold); color: var(--ink); text-align: center; }
+  .final h2 { font-size: clamp(30px, 5vw, 54px); margin: 0 auto 24px; max-width: 18ch; }
+  .btn-dark {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: "Poppins", sans-serif; font-size: 17px; font-weight: 600; cursor: pointer;
+    background: var(--ink); color: var(--cream); border: none; border-radius: 12px;
+    padding: 16px 34px; text-decoration: none; transition: transform .1s;
+  }
+  .btn-dark:active { transform: scale(.99); }
+
+  footer { background: var(--ink); color: var(--muted); padding: 40px 0; font-size: 13px; text-align: center; text-transform: none; }
+  footer a { color: var(--cream); text-decoration: none; }
+</style>
+
+
+
+
+
+
+
+<style data-gb-overrides>
+#io75l{position:absolute;left:-9999px;height:0px;width:0px;opacity:0;}#it0h{font-size:69px;text-align:left;}#inok8{background-color:#f3f0eb;border-radius:0px 0 0 0;}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><div id="i9ph" class="hero-grid"><div><span id="im7n" class="eyebrow">7denní e-mailový program zdarma</span><h1 id="it0h">Přestaň zbytečně přeplácet a udělej si <span id="iwgzl" class="accent">pořádek</span> v telekomunikacích</h1><p class="sub">Každý den ti přijde jeden praktický e-mail s konkrétním tipem, díky kterému zjistíš, kde zbytečně platíš, co má smysl změnit a jak mít všechny služby konečně pod kontrolou.</p></div><div id="prihlaseni" class="card"><h2 id="ic1tf">Chci program zdarma</h2><p class="lead" id="ivltl">Zadej jméno a e-mail — přístup ti přijde během pár minut.</p><form id="i0mib" name="lead" method="POST" data-netlify="true" netlify-honeypot="_gotcha"><input type="hidden" name="form-name" value="lead"><div class="field"><label for="jmeno">Jméno</label><input id="jmeno" name="jmeno" type="text" autocomplete="given-name" placeholder="Jan" required></div><div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" placeholder="jan@email.cz" required></div><button type="submit" class="btn">Chci zjistit, kde přeplácím.</button><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" id="io75l"></form><p id="i8xdi" class="trust">Zdarma. Odhlásit se můžeš kdykoli jedním klikem.</p></div></div></div></header><section class="block" id="i06zo"><div class="wrap"><span class="kicker">Co v programu získáš</span><h2>Za pár minut denně budeš mít v telekomunikacích jasno</h2><div class="benefits" id="icudm"><div class="benefit"><span class="mark">✓</span><p>Zjistíš, jestli zbytečně nepřeplácíš za telefon nebo internet.</p></div><div class="benefit"><span class="mark">✓</span><p>Naučíš se poznat služby, které už dávno nepotřebuješ.</p></div><div class="benefit"><span class="mark">✓</span><p>Ukážu ti, jak mít firemní i rodinné telekomunikace přehledně na jednom místě.</p></div><div class="benefit"><span class="mark">✓</span><p>Dozvíš se, jak přestat ztrácet čas řešením operátorů.</p></div><div class="benefit"><span class="mark">✓</span><p>Na konci budeš přesně vědět, jestli má smysl něco měnit.</p></div></div></div></section><section class="block how" id="i3919"><div class="wrap"><span class="kicker">Jak to funguje</span><h2>Jednoduše ve třech krocích</h2><div class="steps"><div class="step"><div class="num">1</div><h3>Zadej svůj e-mail</h3><p>Přístup do programu ti přijde během několika minut.</p></div><div class="step"><div class="num">2</div><h3>Každý den dostaneš jeden e-mail</h3><p>Bez omáčky. Jen praktické tipy a zkušenosti z více než 200 firem.</p></div><div class="step"><div class="num">3</div><h3>Na konci se můžeš rozhodnout</h3><p id="ii6ly">Pokud budeš chtít, podíváme se společně na tvoje služby během nezávazné online konzultace.</p></div></div></div></section><section class="block final" id="inok8"><div class="wrap" id="iky3i"><h2>Udělej si v telekomunikacích konečně pořádek</h2><a href="#prihlaseni" class="btn-dark">Chci zjistit, kde přeplácím.</a></div></section><footer id="iz8bu6"><div class="wrap">© <span id="y">2026</span> telconarovinu.cz, denní e-mailový program o telekomunikacích</div></footer>
+</body>
+</html>

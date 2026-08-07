@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="cs">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rezervuj si nezávaznou konzultaci — udělej si pořádek v telekomunikacích</title>
+<meta name="description" content="Poslední krok k pořádku u operátora. Podívej se na krátké video, vyplň pár údajů a rezervuj si nezávaznou 30minutovou konzultaci, kde společně projdeme tvoje služby a najdeme, kde ušetříš.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #050505;
+    --ink-2: #14110d;
+    --gold: #c6a27a;
+    --gold-strong: #b58e60;
+    --cream: #f3f0eb;
+    --cream-2: #e9e4da;
+    --muted: #a39c8f;
+    --ink-muted: #6b6459;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Poppins", system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: "Anton", "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+  .wrap { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 720px; margin-left: auto; margin-right: auto; }
+  .accent { color: var(--gold); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: "Poppins", sans-serif; font-size: 17px; font-weight: 600; cursor: pointer;
+    background: var(--gold); color: var(--ink); border: none; border-radius: 12px;
+    padding: 17px 32px; text-decoration: none; transition: background .15s, transform .1s;
+  }
+  .btn:hover { background: var(--gold-strong); }
+  .btn:active { transform: scale(.99); }
+  .btn-lg { font-size: 19px; padding: 19px 40px; }
+
+  /* HERO / VSL */
+  .hero { background: var(--ink); color: var(--cream); padding: 80px 0 90px; text-align: center; }
+  .eyebrow {
+    display: inline-block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(198,162,122,.4); border-radius: 999px;
+    padding: 7px 16px; font-weight: 500;
+  }
+  .hero h1 { font-size: clamp(30px, 5vw, 54px); margin: 24px auto 0; max-width: 20ch; }
+  .hero h1 .accent { color: var(--gold); }
+  .hero .prompt { margin-top: 22px; font-size: 17px; color: #d8d2c6; }
+
+  /* Video frame 16:9 */
+  .video { max-width: 820px; margin: 34px auto 0; }
+  .video-frame {
+    position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden;
+    background: #0d0b09; border: 1px solid rgba(198,162,122,.25);
+    box-shadow: 0 40px 80px -40px rgba(0,0,0,.8);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  }
+  .video-frame iframe, .video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .play {
+    width: 78px; height: 78px; border-radius: 50%; background: var(--gold); color: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .play svg { margin-left: 4px; }
+  .video-note { font-size: 14px; color: var(--muted); }
+
+  .hero .cta-row { margin-top: 34px; }
+  .hero .trust { margin-top: 16px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+
+  /* Sections */
+  section.block { padding: 84px 0; }
+  .kicker { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-strong); font-weight: 600; }
+  .block h2 { font-size: clamp(28px, 4.4vw, 44px); margin: 12px 0 8px; max-width: 22ch; }
+  .center { text-align: center; }
+  .lead { color: var(--ink-muted); font-size: 18px; }
+
+  /* Call steps */
+  .steps { display: grid; gap: 16px; margin-top: 40px; }
+  .step { display: flex; gap: 18px; align-items: flex-start; background: #fff; border: 1px solid var(--cream-2); border-radius: 16px; padding: 22px 24px; }
+  .step .n { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 600; font-family: "Anton", sans-serif; font-size: 16px; }
+  .step p { font-size: 16.5px; }
+  .meta-line { margin-top: 26px; font-size: 15px; color: var(--ink-muted); }
+  .meta-line strong { color: var(--ink); }
+
+  /* Prepare */
+  .prep { background: var(--ink); color: var(--cream); }
+  .prep .kicker { color: var(--gold); }
+  .prep h2 { color: var(--cream); }
+  .prep-list { list-style: none; display: grid; gap: 14px; margin-top: 30px; max-width: 560px; }
+  .prep-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 17px; }
+  .prep-list li::before { content: ""; flex: none; margin-top: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+
+  /* Kvalifikace form */
+  .qual { background: var(--cream); }
+  .form-card {
+    background: #fff; border: 1px solid var(--cream-2); border-radius: 20px;
+    padding: 36px 32px; max-width: 640px; margin: 36px auto 0;
+    box-shadow: 0 30px 60px -40px rgba(20,17,13,.35);
+  }
+  .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; text-align: left; }
+  .field label { font-size: 14px; font-weight: 600; color: var(--ink-2); }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 14px 15px; font: inherit; font-size: 16px; color: var(--ink);
+    background: #fbfaf8; border: 1px solid #dcd7cd; border-radius: 11px; outline: none;
+    transition: border-color .12s, box-shadow .12s;
+  }
+  .field textarea { min-height: 96px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--gold); box-shadow: 0 0 0 3px rgba(198,162,122,.2);
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+  .form-submit {
+    width: 100%; margin-top: 8px; padding: 17px 20px; font-family: "Poppins", sans-serif;
+    font-size: 17px; font-weight: 600; color: var(--ink); background: var(--gold);
+    border: none; border-radius: 12px; cursor: pointer; transition: background .15s;
+  }
+  .form-submit:hover { background: var(--gold-strong); }
+  .form-note { margin-top: 14px; font-size: 13px; color: var(--ink-muted); text-align: center; }
+
+  /* Rezervace / booking embed */
+  .booking { background: var(--ink); color: var(--cream); }
+  .booking .kicker { color: var(--gold); }
+  .booking h2 { color: var(--cream); }
+  .booking .lead { color: #d8d2c6; }
+  .cal-wrap {
+    background: transparent; border-radius: 16px; overflow: hidden; margin: 34px auto 0;
+    max-width: 900px; min-height: 640px; border: 1px solid rgba(198,162,122,.18);
+  }
+  #gb-booking-embed { width: 100%; min-height: 640px; }
+  .booking .trust { margin-top: 18px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); font-weight: 500; text-align: center; }
+
+  footer { background: var(--ink); color: var(--muted); padding: 40px 0; font-size: 13px; text-align: center; border-top: 1px solid rgba(198,162,122,.15); }
+</style>
+<script>window.__gbBookingDefer=true;</script>
+
+<style data-gb-overrides>
+#i6v5h{margin-left:auto;margin-right:auto;}#i93r8{margin-top:14px;}#ibhsd{margin-left:auto;margin-right:auto;}#i56b1{color:#d8d2c6;margin-top:14px;}#i0mtf{margin-left:auto;margin-right:auto;text-align:left;}#ivgzg{margin-left:auto;margin-right:auto;}#i7oqf{margin-top:14px;}#iovygf{position:absolute;left:-9999px;height:0;width:0;opacity:0;}#i3xooh{margin-left:auto;margin-right:auto;}#i0zezg{margin-top:14px;}#rezervace{display:none;}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><span class="eyebrow">Poslední krok</span><h1>Teď už zbývá jen jeden krok k tomu, abys měl u operátora konečně <span class="accent">pořádek</span></h1><p class="prompt">Pusť si krátké video, ať víš, do čeho jdeš.</p><div class="video"><!-- VIDEO: až budeš mít hotové video, nahraď tenhle placeholder.
+             a) YouTube/Vimeo: <iframe src="ODKAZ" allow="autoplay; fullscreen" allowfullscreen></iframe>
+             b) vlastní soubor: <video controls playsinline poster="…"><source src="…" type="video/mp4"></video> --><div class="video-frame" id="is7lf"><span class="play"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span><span class="video-note">Video se připravuje — natáčí se tento týden.</span></div></div><div class="cta-row"><a href="#kvalifikace" class="btn btn-lg">Chci nezávaznou konzultaci</a></div><div class="trust">30 minut, zdarma a nezávazně</div></div></header><!-- CO SE STANE NA KONZULTACI --><section class="block"><div class="wrap center"><span class="kicker">Nezávazná konzultace</span><h2 id="i6v5h">Co se stane na hovoru</h2><p class="lead narrow" id="i93r8">Žádný tlak, žádné cizí smlouvy na sílu. Jen se společně podíváme na to, co máš, a řekneme si, jestli se dá udělat líp.</p></div><div class="wrap narrow"><div class="steps"><div class="step"><span class="n">1</span><p>Společně projdeme tvoje současné služby a zjistíme, jestli dávají smysl.</p></div><div class="step"><span class="n">2</span><p>Ukážu ti, kde můžeš ušetřit peníze, zjednodušit správu služeb nebo udělat větší pořádek.</p></div><div class="step"><span class="n">3</span><p>Konzultace trvá přibližně 30 minut a je zcela nezávazná.</p></div><div class="step"><span class="n">4</span><p>Pokud zjistíme, že změna nedává smysl, řeknu ti to na rovinu.</p></div></div><p class="meta-line center"><strong>Přibližně 30 minut</strong> online, zdarma a bez jakéhokoli závazku.</p></div></section><!-- CO SI PŘIPRAVIT --><section class="block prep"><div class="wrap narrow center" id="i7202"><span class="kicker">Než se spojíme</span><h2 id="ibhsd">Co si na hovor připravit</h2><p class="lead" id="i56b1">Stačí dvě věci, ať můžeme jít rovnou k věci. Nic složitého.</p><ul class="prep-list" id="i0mtf"><li>Faktury od současných poskytovatelů.</li><li>Přibližnou představu o tom, co tě dnes nejvíc štve.</li></ul></div></section><!-- KVALIFIKAČNÍ FORMULÁŘ --><section id="kvalifikace" class="block qual"><div class="wrap center"><span class="kicker">Krok 1 ze 2</span><h2 id="ivgzg">Řekni mi o sobě pár věcí</h2><p class="lead narrow" id="i7oqf">Ať na hovor přijdu připravený a nezdržujeme se zjišťováním základů. Zabere ti to necelou minutu, pak si rovnou vybereš termín.</p><!-- Kvalifikační formulář. Pole (jmeno, email, telefon, problem, mesicni_platba, poznamka)
+           se automaticky napojí: na preview přes naši formulářovou službu, na klientově
+           Netlify webu nativně přes Netlify Forms (Jakubovi chodí e-mailem se všemi odpověďmi).
+           Po odeslání se návštěvník přesune rovnou na sekci s rezervací (data-gb-redirect). --><form data-gb-name="Kvalifikace před hovorem" class="form-card" id="i9z5o" name="kvalifikace" method="POST" data-netlify="true" netlify-honeypot="_gotcha" action="/hovor#rezervace"><input type="hidden" name="form-name" value="kvalifikace"><div class="form-row"><div class="field"><label for="q-jmeno">Jméno a příjmení</label><input id="q-jmeno" type="text" name="jmeno" autocomplete="name" placeholder="Jan Novák" required></div><div class="field"><label for="q-telefon">Telefon</label><input id="q-telefon" type="tel" name="telefon" autocomplete="tel" placeholder="+420 777 123 456" required></div></div><div class="field"><label for="q-email" id="iclw7">E-mail</label><input id="q-email" type="email" name="email" autocomplete="email" placeholder="jan@email.cz" required></div><div class="field"><label for="q-problem">Co tě u operátora nejvíc štve?</label><select id="q-problem" name="problem" required><option value="" disabled selected>Vyber, co sedí nejvíc…</option><option>Platím zbytečně moc</option><option>Nevyznám se ve smlouvách a službách</option><option>Špatná nebo pomalá zákaznická podpora</option><option>Chci sjednotit mobil, internet i TV</option><option>Něco jiného</option></select></div><div class="field"><label for="q-platba">Kolik teď měsíčně platíš za telco služby (mobil, internet, TV)?</label><select id="q-platba" name="mesicni_platba" required><option value="" disabled selected>Vyber přibližnou částku…</option><option>Do 500 Kč</option><option>500–1 000 Kč</option><option>1 000–2 000 Kč</option><option>2 000–4 000 Kč</option><option>Přes 4 000 Kč</option></select></div><div class="field"><label for="q-poznamka">Chceš k tomu něco dodat? (nepovinné)</label><textarea id="q-poznamka" name="poznamka" placeholder="Např. mám 3 čísla na firmu a nevím, jestli mám nejlepší tarif…"></textarea></div><button type="submit" class="form-submit">Pokračovat na výběr termínu</button><p class="form-note">Tvoje údaje slouží jen k přípravě na hovor. Žádný spam.</p><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" id="iovygf"></form></div></section><!-- REZERVACE — výběr termínu se odhalí až po odeslání formuláře (viz skript níže) --><section id="rezervace" class="block booking"><div class="wrap center"><span class="kicker">Krok 2 ze 2</span><h2 id="i3xooh">Vyber si termín, který ti sedne</h2><p class="lead narrow" id="i0zezg">Rezervuj si nezávaznou 30minutovou konzultaci. Po hovoru budeš přesně vědět, jestli má u tebe smysl něco měnit.</p></div><div class="wrap"><div class="cal-wrap"><!-- Rezervační embed se doplní automaticky podle odkazu z nastavení
+             (admin → Rezervace). data-theme="dark" = tmavý embed. --><div data-gb-booking="" data-theme="dark"></div></div><p class="trust">30 minut, zdarma a nezávazně</p></div></section><footer><div class="wrap">© 2026 telconarovinu.cz, nezávazná konzultace o telekomunikacích</div></footer><!-- Gate: výběr termínu se ukáže až po odeslání formuláře. Formulář má
+       data-gb-redirect="/hovor#rezervace" → po odeslání (na preview i na
+       Netlify) skončíme na #rezervace; tady schováme formulář a odhalíme
+       kalendář (a spustíme jeho odložené načtení). --><script>
+  (function () {
+    function reveal() {
+      var form = document.getElementById("kvalifikace");
+      var book = document.getElementById("rezervace");
+      if (!book) return;
+      if (getComputedStyle(book).display === "none") {
+        book.style.display = "";
+        if (window.__gbBookingRender) { var r = window.__gbBookingRender; window.__gbBookingRender = null; r(); }
+      }
+      if (form) form.style.display = "none";
+      book.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    function check() { if (location.hash === "#rezervace") reveal(); }
+    window.addEventListener("hashchange", check);
+    if (document.readyState !== "loading") check();
+    else document.addEventListener("DOMContentLoaded", check);
+  })();
+  </script>
+</body>
+</html>

@@ -13,6 +13,10 @@
 
 
 
+
+
+
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Přestaň přeplácet za telekomunikace — denní e-mailový program zdarma</title>
@@ -53,12 +57,18 @@
   /* ── HERO ── */
   .hero { background: var(--ink); color: var(--cream); padding: 72px 0 84px; }
   .eyebrow {
-    display: inline-block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    display: block; width: 100%; box-sizing: border-box; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--gold); border: 1px solid rgba(198,162,122,.4); border-radius: 999px;
-    padding: 7px 16px; font-weight: 500;
+    padding: 7px 16px; font-weight: 500; white-space: nowrap; text-align: left;
+  }
+  @media (max-width: 480px) {
+    .eyebrow { font-size: 10px; letter-spacing: 0.06em; padding: 6px 10px; }
   }
   .hero h1 {
     font-size: clamp(38px, 7vw, 76px); margin: 26px 0 20px; max-width: 15ch;
+  }
+  @media (max-width: 767px) {
+    .hero h1 { font-size: clamp(32px, 9vw, 44px) !important; }
   }
   .hero .sub {
     font-size: clamp(16px, 2.1vw, 20px); color: #d8d2c6; max-width: 46ch; line-height: 1.65;
@@ -152,8 +162,16 @@
 
 
 
+
+
+
+
+
+
+
+
 <style data-gb-overrides>
-#io75l{position:absolute;left:-9999px;height:0px;width:0px;opacity:0;}#it0h{font-size:63px;text-align:left;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;font-weight:400;display:inline;position:relative;top:11px;}#inok8{background-color:rgb(243, 240, 235);border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;}#iwxof{position:relative;top:14px;}#itrgvk{background-color:rgb(198, 162, 122);color:rgb(0, 0, 0);}@media (max-width: 480px){#it0h{text-align:left;display:inline;position:relative;top:11px;margin:-6px 0px 0px 0px;}#i9ar{display:inline-block;position:static;}}@media (max-width: 767px){#it0h{font-size:clamp(30px, 9vw, 42px);}}
+#io75l{position:absolute;left:-9999px;height:0px;width:0px;opacity:0;}#it0h{font-size:63px;text-align:left;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;font-weight:400;display:inline;position:relative;top:11px;}#inok8{background-color:rgb(243, 240, 235);border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;}#iwxof{position:relative;top:14px;}#itrgvk{background-color:rgb(198, 162, 122);color:rgb(0, 0, 0);}@media (max-width: 480px){#it0h{text-align:left;display:inline;position:relative;}}
 </style>
 </head>
 <body>
